@@ -19,7 +19,7 @@ def fetch_image_urls(query:str, max_links_to_fetch:int, wd:webdriver, sleep_betw
     wd.get(search_url.format(q=query))
 
     image_urls = set()
-    image_count = 2
+    image_count = 0
     results_start = 0
     while image_count < max_links_to_fetch:
         scroll_to_end(wd)
@@ -95,7 +95,7 @@ def search_and_download(search_term:str,driver_path:str,target_path='./images',n
         persist_image(target_folder,elem)
         
 # This is the path I use
-# DRIVER_PATH = '.../Desktop/Scraping/chromedriver 2'
+# DRIVER_PATH = '.../chromedriver'
 # Put the path for your ChromeDriver here
 
 DRIVER_PATH ='/usr/bin/chromedriver'
